@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel='stylesheet' href="style.css">
+</head>
+<body>
+    
+    <div class="calculator">
+        <h2>CALCULATOR</h2>
+        <div class="inputfield">
+            <input type="text" id='display' readonly>
+
+        </div>
+        <div class="buttons">
+            <button class='operation' onclick="clearscreen()">AC</button>
+            <button class='operation' onclick="backspace()">C</button>
+            <button class='operation' value="."onclick="buttonclick(value)">.</button>
+            <button class='operation' value="/"onclick="buttonclick(value)">/</button>
+            <br>
+            <button class='numberbutton' value="7" onclick="buttonclick(value)">7</button>
+            <button class='numberbutton' value="8" onclick="buttonclick(value)">8</button>
+            <button class='numberbutton' value="9" onclick="buttonclick(value)">9</button>
+            <button class='operation' value="*" onclick="buttonclick(value)">x</button>
+            <br>
+            <button class='numberbutton' value="4" onclick="buttonclick(value)">4</button>
+            <button class='numberbutton' value="5" onclick="buttonclick(value)">5</button>
+            <button class='numberbutton' value="6" onclick="buttonclick(value)">6</button>
+            <button class='operation' value="-" onclick="buttonclick(value)">-</button>
+            <br>
+            <button class='numberbutton' value="1" onclick="buttonclick(value)">1</button>
+            <button class='numberbutton' value="2" onclick="buttonclick(value)">2</button>
+            <button class='numberbutton' value="3" onclick="buttonclick(value)">3</button>
+            <button class='operation' value="+" onclick="buttonclick(value)">+</button>
+            <br>
+            <button class='numberbutton' value="00" onclick="buttonclick(value)">00</button>
+            <button class='numberbutton' value="0" onclick="buttonclick(value)">0</button>
+            <button class='operation equal' value="=" onclick="result()">=</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    // var display= document.getElementById('display')
+    function  buttonclick(value){
+        display.value+=value
+
+    }
+    function result(){
+        display.value=eval(display.value)
+    }
+    function clearscreen(){
+        display.value=" "
+    }
+    function backspace(){
+        display.value= display.value.slice(0,-1)
+    }
+</script>
+</html>
